@@ -1,12 +1,6 @@
 package Creational_Pattern.SingletonPattern;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.lang.reflect.Constructor;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainSamosa {
     public static void main(String[] args) throws Exception {
@@ -28,14 +22,14 @@ public class MainSamosa {
         * solution = throw exception in Samosa's constructor
         */
 
-//        Samosa s1 = Samosa.getSamosa();
-//        System.out.println(s1.hashCode());
-//        Constructor<Samosa> constructor = Samosa.class.getDeclaredConstructor();
-//        constructor.setAccessible(true);
-//
-//
-//        Samosa s2 = constructor.newInstance();
-//        System.out.println(s2.hashCode());
+        Samosa s1 = Samosa.getSamosa();
+        System.out.println(s1.hashCode());
+        Constructor<Samosa> constructor = Samosa.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+
+
+        Samosa s2 = constructor.newInstance();
+        System.out.println(s2.hashCode());
 
         /*
         *
@@ -43,17 +37,17 @@ public class MainSamosa {
         * solution = implementing readResolve()
         *
         */
-        Samosa s1 = Samosa.getSamosa();
-        System.out.println(s1.hashCode());
-
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
-        oos.writeObject(s1);
-
-        System.out.println("Serialization done!");
-
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
-        Samosa s2 = (Samosa) ois.readObject();
-        System.out.println(s2.hashCode());
+//        Samosa s1 = Samosa.getSamosa();
+//        System.out.println(s1.hashCode());
+//
+//        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
+//        oos.writeObject(s1);
+//
+//        System.out.println("Serialization done!");
+//
+//        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
+//        Samosa s2 = (Samosa) ois.readObject();
+//        System.out.println(s2.hashCode());
 
 
         /*

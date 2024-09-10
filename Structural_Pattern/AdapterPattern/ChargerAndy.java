@@ -1,4 +1,4 @@
-package Structural_Pattern;
+package Structural_Pattern.AdapterPattern;
 
 public class ChargerAndy implements AndriodCharger{
     @Override
